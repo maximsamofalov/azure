@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "maink8s-2aee"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "maink8s-2aee"
+  template:
+    metadata:
+      labels:
+        app: "maink8s-2aee"
+    spec:
+      containers:
+        - name: "maink8s-2aee"
+          image: "maink8sregistry.azurecr.io/maink8s"
+          ports:
+          - containerPort: 5000
